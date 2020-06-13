@@ -1,6 +1,6 @@
 import React from "react";
 
-const ExpenseTransactions = ({expenseTransaction}) => {
+const ExpenseTransactions = (expenseTransaction) => {
   return (
       <li className="transaction">
         <span className="transaction-text">{expenseTransaction.incomeText}</span>
