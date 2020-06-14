@@ -66,6 +66,7 @@ const AddTransaction = () => {
             name="incomeText"
             value={incomeText}
             onChange={onChangeIncome}
+            required
           />
           <input
             type="number"
@@ -74,6 +75,7 @@ const AddTransaction = () => {
             value={incomeAmount}
             name="incomeAmount"
             onChange={onChangeIncome}
+            required
           />
           <input type="submit" value="submit" />
         </div>
@@ -87,6 +89,7 @@ const AddTransaction = () => {
             name="expenseText"
             autoComplete="off"
             onChange={onChangeExpense}
+            required
           />
           <input
             type="number"
@@ -95,6 +98,7 @@ const AddTransaction = () => {
             name="expenseAmount"
             autoComplete="off"
             onChange={onChangeExpense}
+            required
           />
           <input type="submit" value="submit" />
         </div>
