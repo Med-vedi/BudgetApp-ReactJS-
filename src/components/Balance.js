@@ -3,7 +3,7 @@ import React from "react";
 const Balance = () => {
   return (
     <div className="balance">
-      <h2>Your balance</h2>
+      <h2>Your Balance</h2>
       <h3>$0.00</h3>
       <div className="income-expense">
         <div className="plus">
