@@ -16,17 +16,17 @@ const Social = () => {
           </a>
         </li>
         <li className="icon icon--linkedin">
-          <a href="#">
+          <a href="https://www.linkedin.com/in/vladi-%E2%80%9Cdes%E2%80%9D-medvedi-3667901aa/">
             <span className="icon__name">LinkedIn</span>
           </a>
         </li>
         <li className="icon icon--instagram">
-          <a href="#">
+          <a href="https://www.instagram.com/desmo_papa/">
             <span className="icon__name">Instagram</span>
           </a>
         </li>
         <li className="icon icon--github">
-          <a href="#">
+          <a href="https://github.com/Med-vedi">
             <span className="icon__name">GitHub</span>
           </a>
         </li>
