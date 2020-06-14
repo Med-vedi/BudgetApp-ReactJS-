@@ -3,16 +3,16 @@ import { v4 as uuidv4 } from "uuid";
 import { GlobalContext } from "../context/GlobalState";
 
 const AddTransaction = () => {
-  const { addIncome } = useContext(GlobalContext);
+  const { addIncome, addExpense } = useContext(GlobalContext);
   const [income, setIncome] = useState({
     incomeText: "",
-    incomeAmount: 0,
+    incomeAmount: '',
   });
 
   const { incomeText, incomeAmount } = income;
 
   const onChangeIncome = (e) => {
-    setIncome({ ...income, [e.target.name]: e.target.value });
+    setIncome({ ...income, [e.target.name]: e.target.value.toUpperCase() });
   };
   const onSubmitIncome = (e) => {
     e.preventDefault();
@@ -22,20 +22,22 @@ const AddTransaction = () => {
       incomeAmount: incomeAmount * 1,
     };
     addIncome(newIncomeTransaction);
+    setIncome({
+      incomeText:'',
+      incomeAmount:''
+    })
     console.log("#### income", newIncomeTransaction);
   };
 
-  const { addExpense } = useContext(GlobalContext);
-
   const [expense, setExpense] = useState({
     expenseText: "",
-    expenseAmount: 0,
+    expenseAmount: '',
   });
 
   const { expenseText, expenseAmount } = expense;
 
   const onChangeExpense = (e) => {
-    setExpense({ ...expense, [e.target.name]: e.target.value });
+    setExpense({ ...expense, [e.target.name]: e.target.value.toUpperCase() });
   };
   const onSubmitExpense = (e) => {
     e.preventDefault();
@@ -45,6 +47,12 @@ const AddTransaction = () => {
       expenseAmount: expenseAmount * 1,
     };
     addExpense(newExpenseTransaction);
+    setExpense(
+      {
+        expenseText:'',
+        expenseAmount:''
+      }
+    )
     console.log("#### expense", newExpenseTransaction);
   };
   return (
@@ -56,14 +64,18 @@ const AddTransaction = () => {
             placeholder="Add Income..."
             autoComplete="off"
             name="incomeText"
+            value={incomeText}
             onChange={onChangeIncome}
+            required
           />
           <input
             type="number"
-            placeholder="Amount"
+            placeholder="$0.00"
             autoComplete="off"
+            value={incomeAmount}
             name="incomeAmount"
             onChange={onChangeIncome}
+            required
           />
           <input type="submit" value="submit" />
         </div>
@@ -73,16 +85,20 @@ const AddTransaction = () => {
           <input
             type="text"
             placeholder="Add Expense..."
-            name='expenseText'
+            value={expenseText}
+            name="expenseText"
             autoComplete="off"
             onChange={onChangeExpense}
+            required
           />
           <input
             type="number"
-            placeholder="Amount"
-            name='expenseAmount'
+            placeholder="$0.00"
+            value={expenseAmount}
+            name="expenseAmount"
             autoComplete="off"
             onChange={onChangeExpense}
+            required
           />
           <input type="submit" value="submit" />
         </div>
