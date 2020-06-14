@@ -1,0 +1,105 @@
+.links-wrapper {
+    
+    // font-family: sans-serif;
+    // margin: 0 auto;
+    // position: fixed;
+}
+
+li{
+    list-style: none;
+}
+
+.social-icons {
+    max-width: 80%;
+    height: 100%;
+
+    // margin: 0 auto;
+}
+
+.icon {
+    float: left;
+    position: relative;
+    width: 24%;
+    height: 30%;
+    border: 1px solid black;
+    padding-bottom: 19%;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5);
+
+
+    @media all and (min-width: 640px) {
+        width: 24%;
+        padding-bottom: 9%;
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    a {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background-color: #fff;
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        transition: all .2s ease-out;
+
+        &:hover {
+            background-color: #222;
+            background-size: 0%;
+            transition: all .2s ease-out;
+        }
+    }
+}
+
+.icon__name {
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    width: 90%;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+  
+    transition: all .3s ease-out;
+    opacity: 0;
+    filter: blur(25px);
+    transform: translateZ(0);
+    will-change: transform;
+  
+    .icon:hover & {
+        transition: all .3s ease-out;
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.icon--twitter a {
+    background-color:rgb(85,172,238);
+    background-image: url(../../img/twitter.svg);
+}
+
+.icon--linkedin a {
+    background-color:rgb(1,118,178);
+    background-image: url(../../img/linkedin.svg);
+}
+
+.icon--instagram a {
+    background-color:rgb(213,1,96);
+    background-image: url(../../img/instagram.svg);
+}
+
+.icon--flickr a {
+    background-color: #ff0084;
+    background-image: url(../../img/facebook.svg);
+}
+
+
+.icon--github a {
+    background-color:rgb(63,144,203);
+    background-image: url(../../img/github.svg);
+}
