@@ -1,16 +1,16 @@
 import React from "react";
 
-const ExpenseTransactions = (expenseTransaction) => {
+const ExpenseTransactions = ({ expenseTransaction }) => {
   return (
-      <li className="transaction">
-        <span className="transaction-text">{expenseTransaction.incomeText}</span>
-        <span className="transaction-amount">
-          ${expenseTransaction.incomeAmount}
-        </span>
-        <button className="delete-btn">
-          <i className="fas fa-trash"></i>
-        </button>
-      </li>
+    <li className="transaction">
+      <span className="transaction-text">{expenseTransaction.expenseText}</span>
+      <span className="transaction-amount">
+        ${expenseTransaction.expenseAmount}
+      </span>
+      <button className="delete-btn">
+        <i className="fas fa-trash" />
+      </button> 
+    </li>
   );
 };
 

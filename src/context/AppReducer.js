@@ -5,13 +5,12 @@ export default (state, action) => {
         ...state,
         incomeTransactions: [action.payload, ...state.incomeTransactions],
       };
-    case "ADD_EXPENSE":
+      case "ADD_EXPENSE":
       return {
         ...state,
         expenseTransactions: [action.payload, ...state.expenseTransactions],
       };
     default:
-      console.log("#### state", state);
       return state;
   }
 };
