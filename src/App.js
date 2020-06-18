@@ -1,27 +1,25 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/Header";
-import Balance from "./components/Balance";
-import AddTransaction from "./components/AddTransaction";
-import IncomeList from "./components/IncomeList";
-import ExpenseList from "./components/ExpenseList";
-import { GlobalContextProvider } from "./context/GlobalState";
-import Social from "./components/socialLinks/social";
+import MainPage from "./components/MainPage";
+import { AuthProvider } from "./Auth";
+import PrivatRoute from "./PrivatRoute";
+import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 
 const App = () => {
   return (
-    <GlobalContextProvider>
-      <div className="container">
-        <div className="app-wrapper">
-          <Header />
-          <Balance />
-          <AddTransaction />
-          <IncomeList />
-          <ExpenseList />
-          <Social/>
-        </div>
-      </div>
-    </GlobalContextProvider>
+    <div>
+      <AuthProvider>
+        <Router>
+          {/* <Switch> */}
+            <PrivatRoute exact path="/" component={MainPage} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
+          {/* </Switch> */}
+        </Router>
+      </AuthProvider>
+    </div>
   );
 };
 
