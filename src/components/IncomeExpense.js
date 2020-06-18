@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 import ExpenseTransactions from "./ExpenseTransactions";
 
-const ExpenseList = () => {
+const IncomeExpense = () => {
   const { expenseTransactions } = useContext(GlobalContext);
   return (
     <div className="transactions transactions-expense">
@@ -19,5 +19,5 @@ const ExpenseList = () => {
   );
 };
 
-export default ExpenseList;
+export default IncomeExpense;
 
